@@ -1,0 +1,23 @@
+{
+  "name": "ajax",
+  "version": "1.0.0",
+  "description": "Una practica en la que el servidor montado en expressjs procesara solicitudes del cliente enviadas mediante ajax",
+  "main": "app.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "keywords": [
+    "express",
+    "ajax",
+    "vanillajs"
+  ],
+  "author": "Romualdo Jose Villalobos Perez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.9.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.8.1",
+    "jade": "^1.6.0"
+  }
+}
