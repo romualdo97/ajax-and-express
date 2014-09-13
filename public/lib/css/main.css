@@ -1,0 +1,17 @@
+body {
+	background-image: url('../../images/2.png');	
+}
+.r-inner {
+	padding: 1em;
+}
+.r-fade-in {
+	opacity: 1;
+	transition: all ease-out .2s;
+}
+.r-fade-out {
+	opacity: 0;
+	transition: all ease-out .2s;
+}
+.r-white {
+	background-color: #ecf0f1;
+}

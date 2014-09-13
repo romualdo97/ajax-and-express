@@ -1,7 +1,7 @@
 {
-  "name": "ajax",
-  "version": "1.0.0",
-  "description": "Una practica en la que el servidor montado en expressjs procesara solicitudes del cliente enviadas mediante ajax",
+  "name": "ajax-training",
+  "version": "0.0.1",
+  "description": "Una practica en la que el servidor montado en expressjs procesara solicitudes que el cliente enviara mediante ajax",
   "main": "app.js",
   "scripts": {
     "test": "gulp"
@@ -14,10 +14,12 @@
   "author": "Romualdo Jose Villalobos Perez",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.9.0"
+    "body-parser": "^1.8.1",
+    "express": "^4.9.0",
+    "jade": "^1.6.0"
   },
   "devDependencies": {
-    "body-parser": "^1.8.1",
-    "jade": "^1.6.0"
+    "gulp": "^3.8.8",
+    "gulp-jshint": "^1.8.4"
   }
 }
