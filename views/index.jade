@@ -19,7 +19,7 @@ block scripts
 			container = document.getElementById('serverResponse');
 		el.addEventListener('keyup', function(){
 			sendData( el, function( data ){
-				insertHTML( container, data.names );
+				insertHTML( container, data );
 				console.log( data );
 			});
 			if( el.value == '' ) {
@@ -40,7 +40,7 @@ block scripts
 				xmlhttp = new XMLHttpRequest();
 			else
 				xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
-			xmlhttp.open('get', 'http://localhost:3000/api/friends?q=' + value);
+			xmlhttp.open('GET', 'http://localhost:3000/api/friends?q=' + value);
 			xmlhttp.send();
 			xmlhttp.onreadystatechange = function(){
 				var readystate = xmlhttp.readyState;

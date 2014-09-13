@@ -34,8 +34,7 @@ var nombres = [
 		}
 		// console.log( r );
 		if( !r ){
-			console.log( results );
-			return results.names = 'No hay suggest';
+			return results = ['Ther\'re no matches'];
 		}
 		r = r.replace(/undefined/, '');
 		// console.log( 'removed undefined string ');
