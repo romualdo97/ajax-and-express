@@ -1,0 +1,55 @@
+extends ./layouts/main
+block content
+	div( id="container", class="pure-g" )
+		div( class="pure-u-1" )
+			div( class="r-inner" )
+				form( class="pure-form" )
+					input( id="username", name="username", placeholder="Type your name" )
+					input( type="button", value="Enviar", class="pure-button pure-button-primary" )
+		div( class="pure-u-1" )
+			div( class="r-inner r-white" )
+				div( id="serverResponse" )
+					p No Suggest.
+
+block scripts
+	script( type="text/javascript", src="bower_components/fullimg/fullimg.js" )
+	script( type="text/javascript", src="lib/js/main.js" )
+	script.
+		var el = document.getElementById('username'),
+			container = document.getElementById('serverResponse');
+		el.addEventListener('keyup', function(){
+			sendData( el, function( data ){
+				insertHTML( container, data.names );
+				console.log( data );
+			});
+			if( el.value == '' ) {
+				container.textContent = 'No Suggest';
+			}
+		}, true);		
+
+		function insertHTML( container, data ) {
+			var txt = document.createTextNode(data);
+			container.textContent = data;
+		}
+
+		function sendData( element, fn ){
+			if ( !element.value ) return;
+			var value = element.value;
+			var xmlhttp;
+			if( window.XMLHttpRequest )
+				xmlhttp = new XMLHttpRequest();
+			else
+				xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+			xmlhttp.open('get', 'http://localhost:3000/api/friends?q=' + value);
+			xmlhttp.send();
+			xmlhttp.onreadystatechange = function(){
+				var readystate = xmlhttp.readyState;
+				var status = xmlhttp.status;
+				if( status === 200 && readystate === 4 ){
+					var serverResponse = xmlhttp.responseText;
+					serverResponse = JSON.parse( serverResponse );
+					console.log( serverResponse );
+					fn( serverResponse );
+				}
+			}
+		}

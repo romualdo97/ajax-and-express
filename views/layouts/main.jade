@@ -1,0 +1,14 @@
+doctype html
+html
+	head
+		title #{title}
+		meta( charset="utf-8" )
+		link( rel="stylesheet", type="text/css", href="bower_components/pure/pure-min.css" )
+		link( rel="stylesheet", type="text/css", href="bower_components/pure/grids-responsive-min.css" )
+		link( rel="stylesheet", type="text/css", href="bower_components/fullimg/fullimg.css" )
+		link( rel="stylesheet", type="text/css", href="lib/css/main.css" )
+	body(class="background fullscreen", data-img-width="2560", data-img-height="1600")
+		block content
+
+		script( type="text/javascript", src="bower_components/jquery/dist/jquery.min.js" )
+		block scripts
